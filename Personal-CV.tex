@@ -56,9 +56,9 @@
 \newcommand{\mainboxwidth}{.65}
 
 % Vertical spacing of the boxes (must sum up to 1)
-\newcommand{\headboxheight}{.080}
+\newcommand{\headboxheight}{.070}
 \newcommand{\mainboxheight}{.910}
-\newcommand{\footboxheight}{.010}
+\newcommand{\footboxheight}{.020}
 
 %   sideboxwidth           mainboxwidth
 %  <------------> <---------------------------->
@@ -143,13 +143,14 @@
 
     \header{Fabio}{Matti}
 
-    \vspace{-7px}
+    \vspace{-8px}
+    \hspace{2px}
     \begin{tikzpicture}
-        \draw[fill=white] (-6.0, -0.01) rectangle (6.0, 0.01);
+        \draw[fill=white] (-3.7, -0.01) rectangle (3.7, 0.01);
     \end{tikzpicture}
-    \vspace{5px}
+    \vspace{1px}
 
-    \en{\titlefont{Computational Science and Engineering}}
+    \en{\titlefont{Computational Scientist}}
     \de{\titlefont{Stellenbezeichnung oder Firmenname}}
 }
 
@@ -180,7 +181,7 @@
                 %& Bürgstrasse 56 \\
                 %& 3700 Spiez \\
                 & Route Cantonale 99A \\
-                & 1025 St-Sulpice \\
+                & 1025 Saint-Sulpice \\
                 & \smallspace
 
         \multirow{2}{*}{\scalebox{0.075}{\input{icons/phone.tex}}}
@@ -190,7 +191,7 @@
 
         \multirow{2}{*}{\scalebox{0.075}{\input{icons/email.tex}}}
             & \textbf{E-Mail} \\
-                & \href{mailto:fabio.matti@epfl.ch}{fabio.matti@epfl.ch} \\
+                & \href{mailto:fabio.matti@bluewin.ch}{fabio.matti@bluewin.ch} \\
                 & \largespace
 
         & \titlefont{\en{Personal}\de{Persönliches}} \\ \hline \mediumspace
@@ -226,12 +227,12 @@
 
         \multirow{2}{*}{\scalebox{0.075}{\input{flags/britain.tex}}}
             & \textbf{\en{English}\de{Englisch}} \\
-                & \en{Fluent}\de{Ausgezeichnet} (CEFR: C2) \\
+                & \en{Proficient}\de{Ausgezeichnet} (CEFR: C2) \\
                 & \smallspace
 
         \multirow{2}{*}{\scalebox{0.075}{\input{flags/france.tex}}}
             & \textbf{\en{French}\de{Französisch}} \\
-                & \en{Competent}\de{Sehr gut} (CEFR: C1)
+                & \en{Fluent}\de{Sehr gut} (CEFR: C1)
 
     \end{tabular}
 }
@@ -261,61 +262,65 @@
         \en{Since}\de{Seit} 09/2021
             & \en{\textbf{EPFL, Master's studies}}
             \de{\textbf{EPFL, Masterstudium}} \\
-            & Computational Science and Engineering \\
+            & Computational Science (74 ECTS, GPA: 5.60) \\
             & \smallspace
 
         09/2018 - 07/2021
             & \en{\textbf{University of Bern, Bachelor of Science}}
             \de{\textbf{Universität Bern, Bachelor of Science}}\\
-            & \en{Major: Physics (120 ECTS, GPA: 5.80)}
-            \de{Major: Physik (120 ECTS, Note: 5.80)}\\
-            & \en{Minor: Mathematics (71 ECTS, GPA: 5.68)}
-            \de{Minor: Mathematik (71 ECTS, Note: 5.68)} \\
-            & \en{Thesis: ML in photoacoustics (Grade: 6.0)}
-            \de{Thesis: Supervised learning (Note: 6.0)} \\
-            & \smallspace
-
-        08/2014 - 06/2017
-            & \textbf{Gymnasium Thun, Matura} \\
-            & \en{Bilingual Matura in German and English}
-            \de{Zweisprachige Matura in Deutsch und Englisch} \\
-            & \en{Focus: Physics and applied Mathematics}
-            \de{Fokus: Physik und angewandte Mathematik} \\
+            & \en{Physics (Major, 120 ECTS, GPA: 5.80)}
+            \de{Physik (Major, 120 ECTS, Note: 5.80)}\\
+            & \en{Mathematics (Minor, 71 ECTS, GPA: 5.68)}
+            \de{Mathematik (Minor, 71 ECTS, Note: 5.68)} \\
             & \largespace
 
-        & \titlefont{\en{Work Expericence}} \\ \hline \mediumspace
+        & \titlefont{\en{Expericence}\de{Erfahrung}} \\ \hline \mediumspace
 
         07/2022 - 09/2022
-                    & \textbf{Omnisens S.A. (Prysmian Group), Morges} \\
-                    & \textbf{Machine learning internship} \\
-                    & Anomaly detection in fiber optic sensing \\
-                    & Design of efficient data reduction methods \\
-                    & \largespace
+            & \textbf{Omnisens S.A. (Prysmian Group), Morges} \\
+            & \textbf{Machine learning internship} \\
+            & Designed of efficient data reduction methods \\
+            & Implemented anomaly detection algorithms \\
+            & \largespace
 
-        & \titlefont{\en{Military Service}\de{Militärdienst}} \\ \hline \mediumspace
+        & \titlefont{\en{Projects}\de{Projekte}} \\ \hline \mediumspace
 
-        \en{Since}\de{Seit} 08/2019
+        Semester Project
+            & \textbf{Rational Interpolation of Maxwell's equations} \\
+            & Finite element method, model order reduction \\
+            & \href{https://github.com/FMatti/Maxwell-MRI}{github.com/FMatti/Maxwell-MRI} \\
+            & \smallspace
+        Bachelor's Thesis
+            & \textbf{Learned Spectral Decoloring in Photoacoustics} \\
+            & Gradient boosting, feature importance \\
+            & \href{https://github.com/FMatti/ALE-LSD}{github.com/FMatti/ALE-LSD} \\
+            & \largespace
+
+        & \titlefont{\en{Activities}\de{Tätigkeiten}} \\ \hline \mediumspace
+
+        \en{Since}\de{Seit} 09/2022
+            & \en{\textbf{Machine Learning Student Assistant}}
+            \de{\textbf{Assistent für Machine Learning}} \\
+            & \en{Master course on fundamental ML methods} \\
+            & \smallspace
+        
+        \en{Since}\de{Seit} 09/2022
+            & \en{\textbf{Programming Concepts Student Assistant}}
+            \de{\textbf{Assistent für Programming Concepts}} \\
+            & \en{Master course in C\texttt{++} and scientific computing} \\
+            & \smallspace
+        
+        \en{Since}\de{Seit} 06/2018
             & \en{\textbf{NBC Staff Officer in the Air Base Command 13}}
             \de{\textbf{ABC Stabsoffizier im Flugplatzkommando 13}} \\
             & \en{Leadership assistant of battalion commander} \\
             & \en{In charge of NBC instruction of 700 soldiers}
             \de{Zuständig für ABC Ausbildung von 700 Soldaten} \\
             & \smallspace
-        03/2018 - 10/2018
-            & \en{\textbf{Logistics Officer School Bern}}
-            \de{\textbf{Logistik Offiziersschule Bern}} \\
-            & \en{Platoon leader of 5 sergeants and 28 recruits}
-            \de{Führung und Ausbildung von 33 Unterstellten}\\
-            & \smallspace
 
-        10/2017 - 03/2018
-            & \en{\textbf{NBC Defence Sergeant School Spiez}}
-            \de{\textbf{ABC Abwehr Unteroffiziersschule Spiez}} \\
-            & \smallspace
-
-        07/2017 - 10/2017
-            & \en{\textbf{NBC Decontamination Soldier and Driver C1}}
-            \de{\textbf{ABC Dekontaminationssoldat und Fahrer C1}} \\
+        \en{Since}\de{Seit} 12/2014
+            & \en{\textbf{Alpine Skiing Teacher for Skiclub Zweisimmen}}
+            \de{\textbf{Skilehrer für den Skiklub Zweisimmen}} \\
             & \largespace
 
         & \titlefont{\en{Qualifications}\de{Zertifikate}} \\ \hline \mediumspace
@@ -330,28 +335,18 @@
 
         & \titlefont{\en{Computational Skills}\de{IT-Kenntnisse}} \\ \hline \mediumspace
 
-            \textbf{\en{Programming}\de{Programmierung}}
-                & \en{Proficient}\de{Experte}: Python, C\texttt{++}, \LaTeX \\
-                & \en{Advanced}\de{Fortgeschritten}: C, R, MATLAB \\
+            \en{Programming}\de{Programmierung}
+                & \textbf{\en{Proficient}\de{Experte}}: Python, C\texttt{++}, \LaTeX \\
+                & \textbf{\en{Advanced}\de{Fortgeschritten}}: C, R, MATLAB \\
 
-            \textbf{Software}
-                & \en{Proficient}\de{Experte}: Git, Microsoft Office, GIMP \\
-                & \en{Advanced}\de{Fortgeschritten}: Blender, Inkscape, Photoshop \\
-                & \largespace
-
-        & \titlefont{\en{Extracurricular Activities}\de{Freizeitaktivitäten}} \\ \hline \mediumspace
-
-            \en{Since}\de{Seit} 12/2014
-                & \textbf{Skiclub Zweisimmen}, \en{Alpine Skiing Instructor}\de{Ski Alpin Trainer} \\
+            Software
+                & \textbf{\en{Proficient}\de{Experte}}: Git, Microsoft Office, GIMP \\
+                & \textbf{\en{Advanced}\de{Fortgeschritten}}: Blender, Inkscape, Photoshop \\
                 & \largespace
 
         & \titlefont{Hobbies} \\ \hline \mediumspace
-            & \en{Sports (Skiing, Running, Gymnastics)}
-            \de{Sport (Skifahren, Running)} \\
-            & \en{Graphic Design (Infographics, 3D-Models)}
-            \de{Graphic Design (Infographiken, 3D-Modelle)} \\
-            & \en{Reading (History, Classics, Anthropology)}
-            \de{Lesen (Geschichte, Klassiker, Philosophie)}
+            & \en{Skiing, Running, Graphic Design, Reading}
+            \de{Skifahren, Running, Graphic Design, Lesen} \\
 
     \end{tabular}
 }
@@ -364,7 +359,12 @@
            below=sidebar,
            column=1,
            span=1,
-           rowspan=\footboxheight}{}
+           rowspan=\footboxheight}{
+           
+    \color{white}
+    {\tiny Find the source code and a digital version of this CV at \href{https://github.com/FMatti/Personal-CV}{github.com/FMatti/Personal-CV} }
+
+}
 
 \end{tcbposter}
 
