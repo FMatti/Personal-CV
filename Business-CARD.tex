@@ -1,0 +1,313 @@
+\documentclass[8pt]{extarticle}
+
+
+% -- Languages
+
+\newif\ifen
+\newif\ifde
+
+% Use \en{Text} for english version text and \de{Text} for german version text
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\de}[1]{\ifde#1\fi}
+
+% Uncomment for english version
+\entrue
+
+% Uncomment for german version
+%\detrue
+
+% -- Color scheme
+
+% Color package
+\usepackage{xcolor}
+
+% Color definitions
+\definecolor{minimal-gray}{HTML}{f2f2f2}
+\definecolor{minimal-black}{HTML}{131313}
+\definecolor{minimal-white}{HTML}{F3F2F5}
+\definecolor{minimal-red}{HTML}{C43C2D}
+\definecolor{minimal-blue}{HTML}{343454}
+\definecolor{minimal-yellow}{HTML}{F1C40F}
+\definecolor{minimal-green}{HTML}{2D6514}
+\definecolor{minimal-beige}{HTML}{D7B6A5}
+
+% Colorbox environments
+\usepackage[most]{tcolorbox}
+
+
+% -- Card layout
+
+% Layout adjustments of page (credit card format without margin)
+\usepackage[paperheight=153pt, paperwidth=243pt, margin=0pt]{geometry}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+
+% Interline spacing options
+\newcommand{\largespace}{\\[2pt]}
+\newcommand{\mediumspace}{\\[-3pt]}
+\newcommand{\smallspace}{\\[-5pt]}
+
+% In-box spacing around content
+\newcommand{\inboxspacing}{.015\paperheight}
+
+% Horizontal spacing of the boxes (must sum up to 1)
+\newcommand{\sideboxwidth}{.425}
+\newcommand{\mainboxwidth}{.575}
+
+% Vertical spacing of the boxes (must sum up to 1)
+\newcommand{\headboxheight}{.100}
+\newcommand{\mainboxheight}{.880}
+\newcommand{\footboxheight}{.020}
+
+%   sideboxwidth           mainboxwidth
+%  <------------> <---------------------------->
+%  _____________________________________________
+% |#############################################| ^
+% |#######  #  # #  ## # #  #  #     # #########| |
+% |####### # # # # # # # # # # # ### # #########| | headboxheight
+% |####### ### # # ##  # # ### # # # #   #######| |
+% |#############################################| v
+% |/////////////////////                        | ^
+% |/////////////////////                        | |
+% |/////////////////////                        | |
+% |/////////////////////                        | |
+% |/////////////////////                        | | mainboxheight
+% |/////////////////////                        | |
+% |/////////////////////                        | |
+% |/////////////////////                        | |
+% |/////////////////////                        | v
+% |#############################################| ^
+% |#############################################| | footboxheight
+% |#############################################| v
+
+
+% -- Font settings
+
+% Typesetting packages
+\usepackage[letterspace=20]{microtype}
+\usepackage[T1]{fontenc}
+
+% Raleway font family
+\usepackage[semibold]{raleway}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Custom font commands
+\newcommand{\titlefont}[1]{\uppercase{\textbf{\large{#1}}}}
+
+
+% -- Additional packages
+
+% Multirow tables
+\usepackage{multirow}
+
+% Settings for entire table columns (e.g \begin{tabular}{>{\footnotesize}rl})
+\usepackage{array}
+
+% Tikzpicture graphics
+\usepackage{tikz}
+
+% Clickable URLs
+\usepackage{hyperref}
+\urlstyle{same}
+
+
+\begin{document}
+
+\begin{tcbposter}[
+    poster = {columns=1, rows=1, spacing=0pt},
+    boxes = {sharp corners, halign=center, valign=center, boxrule=0pt}
+]
+
+
+% -- Headbox
+
+\posterbox[
+    colback=minimal-black,
+    halign=center]
+    {name=headbox,
+    span=1,
+    rowspan=\headboxheight}
+{
+
+    \color{white}
+
+    \en{\titlefont{Fabio Matti | Computational Scientist}}
+    \de{\titlefont{Fabio Matti | Stellenbezeichnung oder Firmenname}}
+}
+
+
+% -- Sidebox
+
+\posterbox[
+    colback=minimal-gray,
+    valign=top,
+    top=0.02\paperheight,
+    halign=left,
+    left=-0.01\paperwidth]
+    {name=sidebar,
+    below=headbox,
+    column=1,
+    span=\sideboxwidth,
+    rowspan=\mainboxheight}
+{
+    \begin{tabular}{c}
+
+       \includegraphics[scale=0.0365]{images/formal_final.png}
+
+    \end{tabular}
+}
+
+
+% -- Mainbox
+
+\posterbox[
+    colback=white,
+    valign=top,
+    top=\inboxspacing,
+    halign=left,
+    left=\inboxspacing]
+    {name=mainbox,
+    column*=1,
+    span=\mainboxwidth,
+    below=headbox,
+    rowspan=\mainboxheight}
+{
+
+    \color{minimal-black}
+
+        \vspace{12pt}
+    \begin{tabular}{rl}
+
+        \multirow{2}{*}{\scalebox{0.05}{\input{icons/phone.tex}}}
+            & \textbf{\en{Phone}\de{Telefon}} \\
+                & \href{tel:+41793211310}{+41 79 321 13 10} \\
+                & \mediumspace
+
+        \multirow{2}{*}{\scalebox{0.05}{\input{icons/email.tex}}}
+            & \textbf{E-Mail} \\
+                & \href{mailto:fabio.matti@bluewin.ch}{fabio.matti@bluewin.ch} \\
+                & \mediumspace
+
+        \multirow{2}{*}{\scalebox{0.05}{\input{icons/github.tex}}}
+            & \textbf{GitHub} \\
+                & \href{https://github.com/FMatti}{github.com/FMatti} \\
+                & \mediumspace
+
+        \multirow{2}{*}{\scalebox{0.05}{\input{icons/linkedin.tex}}}
+            & \textbf{LinkedIn} \\
+                & \href{https://linkedin.com/in/fmatti}{linkedin.com/in/FMatti} \\
+                & \mediumspace
+
+    \end{tabular}
+}
+
+
+% -- Footbox
+
+\posterbox[colback=minimal-black]
+           {name=blankbox2,
+           below=sidebar,
+           column=1,
+           span=1,
+           rowspan=\footboxheight}{}
+
+\end{tcbposter}
+
+\begin{tcbposter}[
+    poster = {columns=1, rows=1, spacing=0pt},
+    boxes = {sharp corners, halign=center, valign=center, boxrule=0pt}
+]
+
+
+% -- Headbox
+
+\posterbox[
+    colback=minimal-black,
+    halign=center]
+    {name=headbox,
+    span=1,
+    rowspan=\footboxheight}{}
+
+    
+% -- Mainbox
+
+\posterbox[
+    colback=white,
+    valign=top,
+    top=\inboxspacing,
+    halign=left,
+    left=\inboxspacing]
+    {name=mainbox,
+    column*=1,
+    span=1,
+    below=headbox,
+    rowspan=\mainboxheight}
+{
+
+    \color{minimal-black}
+
+    \begin{tabular}{>{\footnotesize}rl}
+
+        %& \titlefont{\en{Education}\de{Bildungsweg}} \\ \hline \mediumspace
+
+        \en{Since}\de{Seit} 09/2021
+            & \en{\textbf{EPFL, Master of Science}}
+            \de{\textbf{EPFL, Masterstudium}} \\
+            & \en{Computational science and engineering}
+            \de{Rechnergestützte Wissenschaften} \\
+            & \smallspace
+
+        09/2018 - 07/2021
+            & \en{\textbf{University of Bern, Bachelor of Science}}
+            \de{\textbf{Universität Bern, Bachelor of Science}} \\
+            & \en{Physics with minor in mathematics}
+            \de{Physik mit Minor in Mathematik} \\
+            & \smallspace
+
+       \hline \mediumspace
+
+        07/2022 - 09/2022
+            & \textbf{Prysmian Group Morges, Internship} \\
+            & \en{Signal processing and machine learning}
+            \de{Signal Processing und Machine Learning} \\
+            & \smallspace
+
+        \hline \mediumspace
+
+        \en{Since}\de{Seit} 09/2022
+            & \en{\textbf{EPFL, Student Assistant}}
+            \de{\textbf{EPFL, Studenten Assistent}} \\
+            & \en{ML (CS-433) and PCSC (MATH-458)}
+            \de{ML (CS-433) und PCSC (MATH-458)} \\
+            & \smallspace
+
+        \en{Since}\de{Seit} 06/2018
+            & \en{\textbf{Airbase Meiringen, NBC Staff Officer}}
+            \de{\textbf{Flugplatz Meiringen, ABC Stabsoffizier}} \\
+            & \en{Assistant of airbase commander}
+            \de{Führungsgehile Flugplatkommandant} \\
+            & \smallspace
+
+    \end{tabular}
+}
+
+
+
+% -- Footbox
+
+\posterbox[colback=minimal-black]
+           {name=blankbox2,
+           below=mainbox,
+           column=1,
+           span=1,
+           rowspan=\headboxheight}
+{      
+    \color{white}
+
+    {\scriptsize Find my full CV at \href{https://github.com/FMatti/Personal-CV}{github.com/FMatti/Personal-CV} }
+}
+
+\end{tcbposter}
+
+\end{document}
